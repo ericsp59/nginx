@@ -10,19 +10,27 @@ tar -zxvf zlib_1.2.8.dfsg.orig.tar.gz
 cd nginx-1.20.1/
   
 ./configure
-  --sbin-path=/usr/bin/nginx
-  --conf-path=/etc/nginx/nginx.conf
-  --pid-path=/var/run/nginx.pid
-  --error-log-path=/var/log/nginx/error.log
-  --http-log-path=/var/log/nginx/access.log
-  --with-debug --with-pcre=../pcre2-10.39
-  --with-http_ssl_module
-  --with-http_realip_module
-  --with-http_gzip_static_module
-  --with-http_auth_request_module
-  --with-http_perl_module
-  --with-openssl=../openssl-1.1.1k/
-  --with-zlib=../zlib-1.2.8
+--sbin-path=/usr/bin/nginx \
+--conf-path=/etc/nginx/nginx.conf \
+--pid-path=/var/run/nginx.pid \
+--error-log-path=/var/log/nginx/error.log \
+--http-log-path=/var/log/nginx/access.log \
+--with-stream_ssl_preread_module \
+--with-stream \
+--with-stream_realip_module \
+--with-stream_ssl_module \
+--with-debug --with-pcre \
+--with-http_ssl_module \
+--with-http_realip_module \
+--with-http_geoip_module \
+--with-http_gzip_static_module \
+--with-http_auth_request_module \
+--with-http_v2_module \
+--with-http_perl_module \
+--with-openssl=/root/openssl-1.1.1k/ \
+--with-zlib=/root/zlib-1.2.8 \
+--with-http_image_filter_module=dynamic \
+--modules-path=/etc/nginx/modules
 
   
 cd /etc/init.d/
