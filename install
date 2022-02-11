@@ -32,7 +32,9 @@ cd nginx-1.20.1/
 --with-http_image_filter_module=dynamic \
 --modules-path=/etc/nginx/modules
 
-  
+make
+make install
+
 cd /etc/init.d/
 https://gist.githubusercontent.com/tonyc/1405605/raw/c8e4fc84ec75a174fc9ea38f003529fd42fce826/gistfile1.txt
 cp gistfile1.txt nginx
