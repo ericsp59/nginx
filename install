@@ -1,6 +1,7 @@
 apt install -y build-essential
 apt-get install libssl-dev libcrypto++-dev
 apt install libperl-dev
+apt install libgd-dev
 apt-get install libpcre3 libpcre3-dev
 apt-get install zlib1g-dev
 wget https://nginx.org/download/nginx-1.20.1.tar.gz
@@ -11,28 +12,8 @@ wget http://deb.debian.org/debian/pool/main/z/zlib/zlib_1.2.8.dfsg.orig.tar.gz
 tar -zxvf zlib_1.2.8.dfsg.orig.tar.gz
 cd nginx-1.20.1/
   
-./configure
---sbin-path=/usr/bin/nginx \
---conf-path=/etc/nginx/nginx.conf \
---pid-path=/var/run/nginx.pid \
---error-log-path=/var/log/nginx/error.log \
---http-log-path=/var/log/nginx/access.log \
---with-stream_ssl_preread_module \
---with-stream \
---with-stream_realip_module \
---with-stream_ssl_module \
---with-debug --with-pcre \
---with-http_ssl_module \
---with-http_realip_module \
---with-http_geoip_module \
---with-http_gzip_static_module \
---with-http_auth_request_module \
---with-http_v2_module \
---with-http_perl_module \
---with-openssl=/root/openssl-3.0.5/ \
---with-zlib \
---with-http_image_filter_module=dynamic \
---modules-path=/etc/nginx/modules
+./configure --sbin-path=/usr/bin/nginx --conf-path=/etc/nginx/nginx.conf --pid-path=/var/run/nginx.pid --error-log-path=/var/log/nginx/error.log --http-log-path=/var/log/nginx/access.lo --with-stream_ssl_preread_module --with-stream --with-stream_realip_module --with-stream_ssl_module --with-debug --with-pcre --with-http_ssl_module --with-http_realip_module --with-http_geoip_module --with-http_gzip_static_module --with-http_auth_request_module --with-http_v2_module --with-http_perl_module --with-openssl=/root/openssl-3.0.5/ --with-zlib=/root/zlib-1.2.11.dfsg/ --with-http_image_filter_module=dynamic --modules-path=/etc/nginx/modules
+
 
 make
 make install
