@@ -18,9 +18,9 @@ cd nginx-1.20.1/
 make
 make install
 
+wget https://gist.githubusercontent.com/tonyc/1405605/raw/c8e4fc84ec75a174fc9ea38f003529fd42fce826/gistfile1.txt
+cp gistfile1.txt /etc/init.d/nginx
 cd /etc/init.d/
-https://gist.githubusercontent.com/tonyc/1405605/raw/c8e4fc84ec75a174fc9ea38f003529fd42fce826/gistfile1.txt
-cp gistfile1.txt nginx
 chmod +x nginx
 update-rc.d -f nginx defaults
 echo "NGINX_CONF_FILE=/etc/nginx/nginx.conf" > /etc/default/nginx
